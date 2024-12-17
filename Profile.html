@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .navbar {
+            background-color: linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-color: rgb(238, 177, 63);
+            border-radius: 50%;
+        }
+
+        .nav-item {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .nav-link {
+            font-size: 18px;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+
+        .container {
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .button {
+            background-color: rgb(238, 177, 63);
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 20px;
+        }
+
+        .button1 {
+            background-color: rgb(30, 81, 82);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 8px;
+        }
+
+        #profileList .list-group-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #profileList img {
+            max-width: 80px;
+            max-height: 80px;
+            margin-right: 15px;
+            
+        }
+
+        .card {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgb(238, 177, 63);
+            background-color: rgba(233, 162, 19, 0.233);
+            background: linear-gradient(to right, rgb(180, 141, 68), rgb(238, 177, 63));
+        }
+
+        .my {
+            color: rgb(30, 81, 82);
+        }
+
+        .action-buttons button {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 40px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .centered img {
+                height: 30px;
+                width: auto;
+            }
+
+            #profileList .list-group-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #profileList img {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-top: 50px;
+            }
+
+            .button,
+            .button1 {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .navbar-collapse {
+                text-align: center;
+            }
+
+            .card {
+                margin: 10px 0;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .col-md-4,
+            .col-md-7 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white nav-item" href="#"><img src="images/logo.png" alt="EduPlatform Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="Home.html">𝙷𝚘𝚖𝚎</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Profile.html">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Homework.html">𝐇𝐨𝐦𝐞𝐰𝐨𝐫𝐤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="TutorMatching.html">𝐓𝐮𝐭𝐨𝐫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Livechat.html">𝐋𝐢𝐯𝐞 𝐜𝐡𝐚𝐭</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Resources.html">𝐑𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="progress.html">𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <button type="button" class="button" id="logoutButton">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <h2 class="text-center my"><b>Create Profile</b></h2>
+                    <hr>
+                    <form id="profileForm">
+                        <div class="form-group my">
+                            <label for="username"><b>Username</b></label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+
+                        <div class="form-group my">
+                            <label for="email"><b>Email</b></label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div id="emailError" class="text-danger" style="display:none;">Invalid email format!</div>
+                        </div>
+
+                        <div class="form-group my">
+                            <label for="description"><b>Bio</b></label>
+                            <textarea class="form-control" id="description" rows="3" required></textarea>
+                        </div>
+
+                        <input type="hidden" id="skillsInput">
+
+                        <div class="form-group my">
+                            <label><b>Skills</b></label>
+                            <div>
+                                <button type="button" class="btn btn-sm btn-outline-primary m-1 skill-btn" data-skill="Communication">Communication</button>
+                                <button type="button" class="btn btn-sm btn-outline-primary m-1 skill-btn" data-skill="Teamwork">Teamwork</button>
+                                <button type="button" class="btn btn-sm btn-outline-primary m-1 skill-btn" data-skill="Problem Solving">Problem Solving</button>
+                                <button type="button" class="btn btn-sm btn-outline-primary m-1 skill-btn" data-skill="Presentation Skills">Presentation Skills</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group my">
+                            <label for="profilePicture"><b>Upload Profile Picture</b></label>
+                            <input type="file" class="form-control" id="profilePicture" accept="image/*" onchange="previewImage(event)">
+                            <img id="imagePreview" src="" alt="Image Preview" style="display:none; margin-top: 10px; width: 100%; max-width: 200px;">
+                        </div>
+
+                        <button type="submit" class="btn button1 w-100 mt-4"><b>Create Profile</b></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-7 offset-md-1">
+                <div class="card">
+                    <h2 class="text-center my"><b>Submitted Profiles</b></h2>
+                    <hr>
+                    <ul id="profileList" class="list-group">
+                        <!-- Profile items will be appended here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const profileForm = document.getElementById('profileForm');
+        const profileList = document.getElementById('profileList');
+        const skillsInput = document.getElementById('skillsInput');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+
+        // Initialize selected skills array
+        let selectedSkills = [];
+
+        // Skill button click handler
+        document.querySelectorAll('.skill-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const skill = this.getAttribute('data-skill');
+
+                // Toggle skill selection
+                if (selectedSkills.includes(skill)) {
+                    selectedSkills = selectedSkills.filter(s => s !== skill);
+                    this.classList.remove('btn-primary');
+                    this.classList.add('btn-outline-primary');
+                } else {
+                    selectedSkills.push(skill);
+                    this.classList.remove('btn-outline-primary');
+                    this.classList.add('btn-primary');
+                }
+
+                // Update skills input
+                skillsInput.value = selectedSkills.join(', ');
+            });
+        });
+
+        // Profile picture preview
+        function previewImage(event) {
+            const imagePreview = document.getElementById('imagePreview');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Validate email format
+        function isValidEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        // Form submission handling
+        profileForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const email = emailInput.value;
+
+            // Email validation
+            if (!isValidEmail(email)) {
+                emailError.style.display = 'block';
+                return; // Stop form submission
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            const username = document.getElementById('username').value;
+            const description = document.getElementById('description').value;
+
+            // Create list item for the submitted profile
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+            listItem.innerHTML = `
+                <img src="${document.getElementById('imagePreview').src || 'images/default_profile.png'}" alt="Profile Image">
+                <div>
+                    <strong>${username}</strong><br>
+                    <small>${email}</small><br>
+                    <small>${description}</small><br>
+                    <small><em>${skillsInput.value}</em></small>
+                </div>
+            `;
+
+            // Add actions to the list item
+            const actionDiv = document.createElement('div');
+            actionDiv.classList.add('action-buttons');
+            actionDiv.innerHTML = `<button class="btn btn-danger btn-sm delete-btn">Delete</button>`;
+            listItem.appendChild(actionDiv);
+
+            profileList.appendChild(listItem);
+
+            // Clear the form fields
+            profileForm.reset();
+            skillsInput.value = '';
+            selectedSkills = [];
+            document.getElementById('imagePreview').style.display = 'none';
+            document.querySelectorAll('.skill-btn').forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-outline-primary');
+            });
+
+            // Add delete functionality
+            actionDiv.querySelector('.delete-btn').addEventListener('click', function () {
+                profileList.removeChild(listItem);
+            });
+        });
+           
+        document.getElementById('logoutButton').addEventListener('click', function() {
+        window.close(); 
+        window.opener.location.href = 'singup.html'; 
+    });
+   
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

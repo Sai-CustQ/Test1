@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        /* Centered image style */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 38%;
+            transform: translate(-50%, -50%);
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        /* Navbar styles */
+        .navbar {
+            background-color:  linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+        }
+ 
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+ 
+        .navbar-toggler {
+            border: none;
+        }
+ 
+        .navbar-toggler-icon {
+            background-color: rgb(238, 177, 63);
+            border-radius: 50%;
+        }
+ 
+        .nav-item {
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        .nav-link {
+            font-size: 18px;
+        }
+ 
+        .nav-link.active {
+            font-weight: bold;
+        }
+ 
+        /* Image container styles */
+        .container {
+            position: relative;
+        }
+ 
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+ 
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 40px;
+            }
+ 
+            .nav-link {
+                font-size: 16px;
+            }
+ 
+            .centered img {
+                height: 30px;
+                width: auto;
+            }
+        }
+        .button {
+  background-color: rgb(238, 177, 63); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 20px;
+}  
+.my {
+            color: rgb(238, 177, 63);
+        }
+        .card {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgb(238, 177, 63);
+            background-color: rgba(233, 162, 19, 0.233);
+            background: linear-gradient(to right, rgb(180, 141, 68), rgb(238, 177, 63));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white nav-item" href="#"><img src="images/logo.png" alt="EduPlatform Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="Home.html">𝙷𝚘𝚖𝚎</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Profile.html">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Homework.html">𝐇𝐨𝐦𝐞𝐰𝐨𝐫𝐤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="TutorMatching.html">𝐓𝐮𝐭𝐨𝐫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Livechat.html">𝐋𝐢𝐯𝐞 𝐜𝐡𝐚𝐭</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Resources.html">𝐑𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="progress.html">𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <button type="button" class="button" id="logoutButton">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h2 class="text-center mb-4 my"><b>Find a Tutor</b></h2>
+        <!-- Search Bar -->
+        <div class="input-group mb-4 ">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by subject" onkeyup="filterTutors()">
+            <button class="button" type="button">Search</button>
+        </div>
+ 
+        <!-- Tutor List -->
+        <div id="tutorList">
+            <!-- Tutor Card -->
+            <div class="card mb-3" data-subject="Mathematics">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="images/m2.JPG" class="img-fluid rounded-start" alt="Tutor Image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>John Doe</b></h5>
+                            <p class="card-text"><b>Subject:</b> Mathematics</p>
+                            <p class="card-text"><b>Experience: </b>5 years</p>
+                            <a href="Livechat.html" class="btn btn-success">Request</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Tutor Card -->
+            <div class="card mb-3" data-subject="Physics">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="images/m1.JPG" class="img-fluid rounded-start" alt="Tutor Image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Jane Smith</b></h5>
+                            <p class="card-text"><b>Subject:</b> Physics</p>
+                            <p class="card-text"><b>Experience:</b> 3 years</p>
+                            <a href="Livechat.html" class="btn btn-success">Request</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Tutor Card -->
+            <div class="card mb-3" data-subject="Chemistry">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="images/m3.JPG" class="img-fluid rounded-start" alt="Tutor Image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Emily Davis</b></h5>
+                            <p class="card-text"><b>Subject:</b> Chemistry</p>
+                            <p class="card-text"><b>Experience:</b> 4 years</p>
+                            <a href="Livechat.html" class="btn btn-success">Request</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterTutors() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const tutorCards = document.querySelectorAll('#tutorList .card');
+           
+            tutorCards.forEach(card => {
+                const subject = card.getAttribute('data-subject').toLowerCase();
+                if (subject.includes(searchInput)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+           
+        document.getElementById('logoutButton').addEventListener('click', function() {
+        window.close(); 
+        window.opener.location.href = 'singup.html'; 
+    });
+
+    </script>
+    </body>
+    </html>

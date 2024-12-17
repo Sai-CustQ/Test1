@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Marketplace</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-image: url("https://img.pikbest.com/backgrounds/20220119/parents-meeting-stationery-yellow-cartoon-background_6245808.jpg!bw700");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(189, 140, 26, 0.9);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            min-height: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 0;
+        }
+
+        .main:hover {
+            transform: scale(1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .signup,
+        .login {
+            display: none;
+            width: 100%;
+        }
+
+        .signup.active,
+        .login.active {
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            transition: opacity 0.5s ease-in;
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="password"]:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+            outline: none;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .toggle-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .my {
+            color: #ffb400;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .main {
+                padding: 20px;
+            }
+
+            label {
+                font-size: 1.25rem;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <!-- Sign Up Form -->
+        <div class="signup active">
+            <form id="signupForm">
+                <label for="signupForm" class="d-flex justify-content-center my"><b>Sign Up</b></label>
+                <input type="text" name="txt" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="pswd" placeholder="Password" required>
+                <input type="password" name="confirm_pswd" placeholder="Confirm Password" required>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <div class="toggle-link" onclick="toggleForm()">Already have an account? Login</div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login">
+            <form id="loginForm">
+                <label for="loginForm" class="my d-flex justify-content-center"><b>Login</b></label>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="pswd" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="toggle-link" onclick="toggleForm()">Don't have an account? Sign up</div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        function toggleForm() {
+            const signupForm = document.querySelector('.signup');
+            const loginForm = document.querySelector('.login');
+            signupForm.classList.toggle('active');
+            loginForm.classList.toggle('active');
+        }
+
+        // Validation function
+        function validateForm(form) {
+            const username = form.querySelector("input[name='txt']");
+            const email = form.querySelector("input[name='email']");
+            const password = form.querySelector("input[name='pswd']");
+            const confirmPassword = form.querySelector("input[name='confirm_pswd']");
+
+            // Username validation (must be alphanumeric and at least 3 characters)
+            if (username && username.value.trim() !== "") {
+                const usernameRegex = /^[a-zA-Z0-9]{3,}$/;
+                if (!usernameRegex.test(username.value)) {
+                    alert('Invalid Username: Username must be at least 3 characters long and contain only letters and numbers.');
+                    return false;
+                }
+            }
+
+            // Email validation (basic email format check)
+            if (email.value.trim() === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                alert('Invalid Email: Please enter a valid email address!');
+                return false;
+            }
+
+            // Password validation (strong password)
+            const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!strongPasswordRegex.test(password.value)) {
+                alert('Weak Password: Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                return false;
+            }
+
+            // Confirm Password validation (must match password)
+            if (confirmPassword && password.value !== confirmPassword.value) {
+                alert('Password Mismatch: Password and Confirm Password do not match!');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Handle form submission for signup
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (validateForm(this)) {
+                alert('Signed up successfully! Welcome to our platform.');
+                toggleForm(); // Switch to login form after alert confirmation
+            }
+        });
+
+        // Handle form submission for login
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (validateForm(this)) {
+                alert('Logged in successfully! Welcome back!');
+                const newTab = window.open('Home.html', '_blank');
+                newTab.focus();
+
+            }
+        });
+    </script>
+</body>
+
+</html>

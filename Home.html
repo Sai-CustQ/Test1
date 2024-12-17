@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        /* Centered image style */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 38%;
+            transform: translate(-50%, -50%);
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        /* Navbar styles */
+        .navbar {
+            background-color: linear-gradient(to right, rgb(30, 81, 82), rgb(30, 81, 82));
+        }
+ 
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+ 
+        .navbar-toggler {
+            border: none;
+        }
+ 
+        .navbar-toggler-icon {
+            background-color: rgb(238, 177, 63);
+            border-radius: 50%;
+        }
+ 
+        .nav-item {
+            font-family: "Times New Roman", Times, serif;
+        }
+ 
+        .nav-link {
+            font-size: 18px;
+        }
+ 
+        .nav-link.active {
+            font-weight: bold;
+        }
+ 
+        /* Image container styles */
+        .container {
+            position: relative;
+        }
+ 
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+ 
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 40px;
+            }
+ 
+            .nav-link {
+                font-size: 16px;
+            }
+ 
+            .centered img {
+                height: 30px;
+                width: auto;
+            }
+        }
+ 
+        .card-title {
+            color: #262626;
+            font-size: 1.5em;
+            line-height: normal;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+ 
+        .small-desc {
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5em;
+            color: #452c2c;
+        }
+ 
+        .small-desc {
+            font-size: 1em;
+        }
+ 
+        .go-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #6293c8, #384c6c);
+            border-radius: 0 4px 0 32px;
+        }
+ 
+        .go-arrow {
+            margin-top: -4px;
+            margin-right: -4px;
+            color: white;
+            font-family: courier, sans;
+        }
+ 
+        .card {
+            display: block;
+            position: relative;
+            max-width: 350px;
+            max-height: 300px;
+            background-color: #f2f8f9;
+            border-radius: 10px;
+            padding: 2em 1.2em;
+            margin: 12px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+ 
+        .card:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: linear-gradient(135deg, #364a60, #384c6c);
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.35s ease-out;
+        }
+ 
+        .card:hover:before {
+            transform: scale(28);
+        }
+ 
+        .card:hover .small-desc {
+            transition: all 0.5s ease-out;
+            color: rgba(255, 255, 255, 0.8);
+        }
+ 
+        .card:hover .card-title {
+            transition: all 0.5s ease-out;
+            color: #ffffff;
+        }
+ 
+        .button {
+            background-color: rgb(238, 177, 63);
+            /* Green */
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white nav-item" href="#"><img src="images/logo.png" alt="EduPlatform Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="Home.html">𝙷𝚘𝚖𝚎</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Profile.html">𝐏𝐫𝐨𝐟𝐢𝐥𝐞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Homework.html">𝐇𝐨𝐦𝐞𝐰𝐨𝐫𝐤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="TutorMatching.html">𝐓𝐮𝐭𝐨𝐫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Livechat.html">𝐋𝐢𝐯𝐞 𝐜𝐡𝐚𝐭</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="Resources.html">𝐑𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="progress.html">𝐏𝐫𝐨𝐠𝐫𝐞𝐬𝐬</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <button type="button" class="button" id="logoutButton">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Full-width Image -->
+    <div class="container mt-4">
+        <img src="images/home2.jpg" alt="EduPlatform Homepage">
+        <div class="centered"><img src="images/homework.png" height="100px" width="100%" alt="Homework"></div>
+    </div>
+ 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Homework Submission</p>
+                    <p class="small-desc">
+                        The Homework Submission feature enables students to easily submit questions through a structured
+                        form, with file uploads, comments, and submission history for organized tracking.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Tutor Matching</p>
+                    <p class="small-desc">
+                        The Tutor Matching feature connects students with suitable tutors based on their academic needs.
+                        It displays tutor profiles, allowing students to request sessions and communicate.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Live Chat</p>
+                    <p class="small-desc">
+ 
+                        The Live Chat feature enables real-time communication between students and tutors, supporting
+                        text, file sharing, and video options. It provides instant interaction for immediate help.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Resources</p>
+                    <p class="small-desc">
+                        The Resources feature offers categorized study materials with a search functionality, providing
+                        students easy access to educational content and tools for enhanced learning.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Progress</p>
+                    <p class="small-desc">
+ 
+                        The Progress Tracking feature monitors and displays students' academic performance, providing
+                        reports and recommendations to help them track their growth and improve their studies.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <p class="card-title">Study Materials</p>
+                    <p class="small-desc">
+                        Study Materials refers to educational resources such as textbooks, articles, videos, and
+                        practice exercises that support learning and help students understand and master various
+                        subjects.
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+        window.close(); 
+        window.opener.location.href = 'singup.html'; 
+    });
+    </script>
+    
+</body>
+ 
+</html>
